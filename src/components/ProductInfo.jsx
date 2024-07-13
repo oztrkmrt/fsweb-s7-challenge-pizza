@@ -16,26 +16,35 @@ export default function ProductInfo() {
         <div>
             <div style={{
                 color: "black",
-                marginTop: "20px"
+                marginTop: "20px",
+                marginBottom: "20px",
+                fontWeight: "bold"
             }} >{products.name}</div>
             <div style={{
                 display: "flex",
-                justifyContent: "space-between",
-                width: "600px",
-                marginLeft: "800px"
-
+                justifyContent: "space-between"
             }}>
-                <div style={{ marginRight: "160px", fontWeight: "bold" }}>{products.price} ₺</div>
-                <div style={{ color: "#5F5F5F", fontSize: "20px" }}>{products.score} </div>
-                <div style={{ color: "#5F5F5F", fontSize: "20px" }}>({products.comment})</div>
+                <div style={{
+                    marginRight: "160px",
+                    fontWeight: "bold",
+                    marginBottom: "10px",
+                    fontSize: "20px"
+                }}>{products.price} ₺</div>
+                <div style={{
+                    color: "#5F5F5F",
+                    fontSize: "14px"
+                }}>{products.score} </div>
+                <div style={{
+                    color: "#5F5F5F",
+                    fontSize: "14px"
+                }}>({products.comment})</div>
 
             </div>
             <div style={{
-                width: "600px",
-                marginLeft: "800px",
+
                 color: "#5F5F5F",
-                fontSize: "20px",
-                lineHeight: "30px",
+                fontSize: "12px",
+                lineHeight: "20px",
                 textAlign: "left"
             }}>{products.description} </div>
         </div>

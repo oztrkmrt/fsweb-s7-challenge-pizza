@@ -1,20 +1,25 @@
-import '../styles/Home.css'
+
 import logo from '../../Assets/mile1-assets/logo.svg'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
 
-export default function Home(props) {
+export default function Home() {
 
-    const { handleClick } = props
+    let history = useHistory();
+
+    const handleClick = () => {
+        history.push("/OrderPizza")
+    }
 
     return (
 
-        <div>
+        <div className='home'>
             <img src={logo} alt='Logo' />
             <div className="slogan">
                 <div>KOD ACIKTIRIR</div>
                 <div>PİZZA, DOYURUR</div>
             </div>
-            <button type='button'>ACIKTIM</button>
+            <button onClick={handleClick}>ACIKTIM</button>
         </div>
 
     )

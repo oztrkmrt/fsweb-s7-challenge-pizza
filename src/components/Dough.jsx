@@ -2,10 +2,11 @@ export default function Dough() {
     return (
         <div style={{
             width: "300px",
+            marginTop: "20px"
         }}>
             <form>
-                <div>
-                    <span>Hamur Seç</span>
+                <div style={{ padding: "5px" }}>
+                    <span style={{ fontWeight: "bold" }}>Hamur Seç</span>
                     <span style={{ color: "red" }}>*</span>
                 </div>
                 <select >

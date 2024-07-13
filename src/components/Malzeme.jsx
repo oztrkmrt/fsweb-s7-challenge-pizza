@@ -1,7 +1,7 @@
 import { Col, Row } from "reactstrap";
 
 
-export default function Malzeme({ handleChangeIng, ingredients }) {
+export default function Malzeme({ handleChangeIng, ingredients, numberOfIngs }) {
 
     const malzemeler = [
         "Pepperoni",
@@ -25,19 +25,27 @@ export default function Malzeme({ handleChangeIng, ingredients }) {
 
         <form>
             <div className="malzemeYazi">
-                <span>Ek Malzemeler</span>
-                <span>En fazla 10 malzeme seçebilirsiniz. 5₺</span>
+                <span style={{
+                    marginBottom: "15px",
+                    fontWeight: "bold",
+                    marginTop: "20px"
+                }}>Ek Malzemeler</span>
+                <span style={{
+                    color: numberOfIngs <= 4 ? "#CE2829" : "#5F5F5F",
+                    marginBottom: "15px"
+                }}>En az 4, en fazla 10 malzeme seçebilirsiniz. 5₺</span>
             </div>
             <Row className="malzemeler">
                 {malzemeler.map((malzeme, index) => (
                     <Col md={4} key={index}>
                         <label>
                             <input type="checkbox"
-                                checked={ingredients.includes(malzeme)}
                                 onChange={handleChangeIng}
                                 name="malzemeler"
-                                value={malzeme} />
-                            {malzeme}
+                                value={malzeme}
+                                checked={ingredients.includes(malzeme)}
+                            />
+                            <span className="checkbox">{malzeme}</span>
                         </label>
                     </Col>
 
