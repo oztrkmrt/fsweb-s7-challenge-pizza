@@ -1,11 +1,33 @@
+import axios from 'axios';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
-export default function SiparisToplam({ numberOfIngs, numberOfOrder }) {
+export default function SiparisToplam({ numberOfIngs, numberOfOrder, buttonDisabled, chooseBoyut,
+    chooseDough, ingredients }) {
 
     let history = useHistory();
 
     const handleClick = () => {
         history.push("/Success")
+    }
+
+    const formData = {
+        Boyut: { chooseBoyut },
+        Hamur: { chooseDough },
+        Malzemeler: { ingredients }
+    }
+
+    const submitHandler = () => {
+
+        axios.post("https://reqres.in/api/pizza", formData)
+            .then((response) => {
+                console.log("Siparişiniz yolda", response.data)
+                history.push("/Success")
+            })
+            .catch((error) => {
+                console.error(error)
+            })
+
+
     }
 
 
@@ -38,10 +60,11 @@ export default function SiparisToplam({ numberOfIngs, numberOfOrder }) {
                 fontWeight: "bold",
                 borderRadius: "3px",
                 width: "20vw",
-                marginBottom: "50px",
-                border: "1px #5F5F5F solid"
+                border: "1px #5F5F5F solid",
+                padding: "10px",
             }}
-                onClick={handleClick}
+                onClick={submitHandler}
+                disabled={buttonDisabled}
             >SİPARİŞ VER</button>
         </div>
     )

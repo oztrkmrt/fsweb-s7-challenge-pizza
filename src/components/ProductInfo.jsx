@@ -1,5 +1,6 @@
 import React from "react"
 
+
 export default function ProductInfo() {
 
     const products = {
@@ -13,7 +14,8 @@ export default function ProductInfo() {
 
 
     return (
-        <div>
+        <div className="prodct-info">
+
             <div style={{
                 color: "black",
                 marginTop: "20px",
@@ -41,7 +43,6 @@ export default function ProductInfo() {
 
             </div>
             <div style={{
-
                 color: "#5F5F5F",
                 fontSize: "12px",
                 lineHeight: "20px",

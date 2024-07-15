@@ -8,79 +8,68 @@ import SiparisNotu from '../components/SiparisNotu'
 import SiparisAdet from '../components/SiparisAdet'
 import SiparisToplam from '../components/SiparisToplam'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react'
+import Footer from '../components/Footer'
+import banner from "../../Assets/mile2-aseets/pictures/form-banner.png"
 
 
-export default function OrderPizza() {
-
-    const [ingredients, setIngredients] = useState([]);
-    const [numberOfIngs, setNumberOfIngs] = useState(0);
-    const [numberOfOrder, setNumberOfOrder] = useState(1)
-
-
-    const handleChangeIng = (e) => {
-
-        let newIngredients;
-
-        if (ingredients.includes(e.target.value)) {
-            newIngredients = ingredients.filter(item => item !== e.target.value);
-        } else if (ingredients.length < 10) {
-            newIngredients = [...ingredients, e.target.value];
-        } else {
-            return;
-        }
-
-        const newNumberOfIngs = newIngredients.length;
-        setIngredients(newIngredients);
-        setNumberOfIngs(newNumberOfIngs);
-
-    };
-
-    const handleChangeIncrease = () => {
-        setNumberOfOrder(numberOfOrder + 1)
-    }
-
-    const handleChangeDecrease = () => {
-        if (numberOfOrder > 1) {
-            setNumberOfOrder(numberOfOrder - 1)
-        }
-
-    }
+export default function OrderPizza({
+    setChooseBoyut,
+    handleChangeIng,
+    ingredients,
+    numberOfIngs,
+    handleChangeIncrease,
+    handleChangeDecrease,
+    numberOfOrder,
+    buttonDisabled,
+    setChooseDough,
+    chooseBoyut,
+    chooseDough
+}) {
 
 
 
     return (
-        <div className='orderpizza'>
-            <header>
-                <img src={logo} alt="Logo" />
-                <div className='order'>
-                    <span style={{ fontWeight: "lighter" }}>Anasayfa - </span>
-                    <span style={{ fontWeight: "lighter" }}>Seçenekler - </span>
-                    <span style={{ fontWeight: "bold" }}>Sipariş Oluştur</span>
+        <>
+            <div className='orderpizza'>
+                <header>
+                    <img src={logo} alt="Logo" />
+                </header>
+                <div className='topsection'>
+                    <img style={{
+                        width: "20vw",
+
+                    }} src={banner} alt="Pizzaa" />
+                    <div className='order'>
+                        <span style={{ fontWeight: "lighter" }}>Anasayfa - </span>
+                        <span style={{ fontWeight: "lighter" }}>Seçenekler - </span>
+                        <span style={{ fontWeight: "bold" }}>Sipariş Oluştur</span>
+                    </div>
+                    <ProductInfo />
                 </div>
-            </header>
-            <div className='orderdetails'>
-                <ProductInfo />
-                <section className='sizes'>
-                    <Boyut />
-                    <Dough />
-                </section>
-                <section className='malzeme'>
-                    <Malzeme handleChangeIng={handleChangeIng} ingredients={ingredients} numberOfIngs={numberOfIngs} />
-                </section>
-                <section className='siparisnotu'>
-                    <SiparisNotu />
-                </section>
-                <hr />
-                <div className='siparis'>
-                    <section>
-                        <SiparisAdet handleChangeIncrease={handleChangeIncrease} handleChangeDecrease={handleChangeDecrease} numberOfOrder={numberOfOrder} />
+                <div className='orderdetails'>
+                    <section className='sizes'>
+                        <Boyut setChooseBoyut={setChooseBoyut} />
+                        <Dough setChooseDough={setChooseDough} />
                     </section>
-                    <section>
-                        <SiparisToplam numberOfIngs={numberOfIngs} numberOfOrder={numberOfOrder} />
+                    <section className='malzeme'>
+                        <Malzeme handleChangeIng={handleChangeIng} ingredients={ingredients} numberOfIngs={numberOfIngs} />
                     </section>
+                    <section className='siparisnotu'>
+                        <SiparisNotu />
+                    </section>
+                    <hr />
+                    <div className='siparis'>
+                        <section>
+                            <SiparisAdet handleChangeIncrease={handleChangeIncrease} handleChangeDecrease={handleChangeDecrease} numberOfOrder={numberOfOrder} />
+                        </section>
+                        <section>
+                            <SiparisToplam numberOfIngs={numberOfIngs} numberOfOrder={numberOfOrder} buttonDisabled={buttonDisabled} chooseBoyut={chooseBoyut} chooseDough={chooseDough} ingredients={ingredients} />
+                        </section>
+                    </div>
                 </div>
+
             </div>
-        </div>
+            <Footer />
+        </>
     )
 }

@@ -1,4 +1,11 @@
-export default function Dough() {
+export default function Dough({ setChooseDough }) {
+
+
+
+    const handleChooseChange = (event) => {
+        setChooseDough(event.target.value)
+    }
+
     return (
         <div style={{
             width: "300px",
@@ -9,12 +16,12 @@ export default function Dough() {
                     <span style={{ fontWeight: "bold" }}>Hamur Seç</span>
                     <span style={{ color: "red" }}>*</span>
                 </div>
-                <select >
-                    <option selected>Hamur Kalınlığı</option>
-                    <option value="1">Ultra İnce Hamur</option>
-                    <option value="2">İnce Hamur</option>
-                    <option value="3">Orta Hamur</option>
-                    <option value="4">Kalın Hamur</option>
+                <select onChange={handleChooseChange}>
+                    <option selected>-Hamur Kalınlığı Seç-</option>
+                    <option value="Ultra İnce Hamur">Ultra İnce Hamur</option>
+                    <option value="İnce Hamur">İnce Hamur</option>
+                    <option value="Orta Hamur">Orta Hamur</option>
+                    <option value="Kalın Hamur">Kalın Hamur</option>
                 </select>
             </form>
         </div>

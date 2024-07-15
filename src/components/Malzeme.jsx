@@ -28,12 +28,12 @@ export default function Malzeme({ handleChangeIng, ingredients, numberOfIngs }) 
                 <span style={{
                     marginBottom: "15px",
                     fontWeight: "bold",
-                    marginTop: "20px"
                 }}>Ek Malzemeler</span>
                 <span style={{
-                    color: numberOfIngs <= 4 ? "#CE2829" : "#5F5F5F",
-                    marginBottom: "15px"
-                }}>En az 4, en fazla 10 malzeme seçebilirsiniz. 5₺</span>
+                    color: numberOfIngs < 4 ? "#CE2829" : "#5F5F5F",
+                    fontWeight: numberOfIngs < 4 ? "bold" : "lighter",
+                    marginBottom: "15px",
+                }}>*En az 4, en fazla 10 malzeme seçebilirsiniz. 5₺</span>
             </div>
             <Row className="malzemeler">
                 {malzemeler.map((malzeme, index) => (

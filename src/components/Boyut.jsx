@@ -1,4 +1,11 @@
-export default function Boyut() {
+export default function Boyut({ setChooseBoyut }) {
+
+
+
+    const handleChooseChange = (event) => {
+        setChooseBoyut(event.target.value)
+    }
+
     return (
         <form style={{
             width: "300px",
@@ -20,19 +27,22 @@ export default function Boyut() {
                 <label>
                     <input type="radio"
                         name="boyut"
-                        value="küçük" />
+                        value="Küçük"
+                        onChange={handleChooseChange} />
                     <span className="radiobtn">Küçük</span>
                 </label>
                 <label>
                     <input type="radio"
                         name="boyut"
-                        value="orta" />
+                        value="Orta"
+                        onChange={handleChooseChange} />
                     <span className="radiobtn">Orta</span>
                 </label>
                 <label>
                     <input type="radio"
                         name="boyut"
-                        value="büyük" />
+                        value="Büyük"
+                        onChange={handleChooseChange} />
                     <span className="radiobtn">Büyük</span>
                 </label>
             </div>
