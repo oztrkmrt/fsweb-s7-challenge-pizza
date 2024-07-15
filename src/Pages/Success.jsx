@@ -16,12 +16,12 @@ export default function Success({
         <span style={{
           fontFamily: "Satisfy",
           color: "#FDC913",
-          fontSize: "40px"
+          fontSize: "32px"
         }}>lezzetin yolda</span>
-        <span>SİPARİŞİNİZ ALINDI!</span>
+        <span>SİPARİŞ ALINDI</span>
         <hr />
         <span style={{
-          fontSize: "40px",
+          fontSize: "32px",
           marginBottom: "40px"
         }}>Position Absolute Acı Pizza</span>
         <div className='successpizza'>
@@ -35,9 +35,10 @@ export default function Success({
         }}>
           <div style={{
             display: "flex",
-            border: "2px white solid",
-            width: "320px",
-            height: "200px",
+            border: "2px #FAF7F2 solid",
+            borderRadius: "6px",
+            width: "300px",
+            height: "180px",
             alignItems: "center",
             fontSize: "20px",
             marginTop: "30px",

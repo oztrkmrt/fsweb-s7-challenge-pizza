@@ -9,7 +9,7 @@ export default function HomeHeader({ handleClick }) {
                 <div style={{
                     fontFamily: "Satisfy",
                     color: "#FDC913",
-                    fontSize: "30px"
+                    fontSize: "25px"
                 }}>fırsatı kaçırma</div>
                 <div>KOD ACIKTIRIR</div>
                 <div>PİZZA, DOYURUR</div>
