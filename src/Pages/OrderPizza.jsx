@@ -23,7 +23,9 @@ export default function OrderPizza({
     buttonDisabled,
     setChooseDough,
     chooseBoyut,
-    chooseDough
+    chooseDough,
+    note,
+    handleNoteChange
 }) {
 
 
@@ -55,7 +57,7 @@ export default function OrderPizza({
                         <Malzeme handleChangeIng={handleChangeIng} ingredients={ingredients} numberOfIngs={numberOfIngs} />
                     </section>
                     <section className='siparisnotu'>
-                        <SiparisNotu />
+                        <SiparisNotu note={note} handleNoteChange={handleNoteChange} />
                     </section>
                     <hr />
                     <div className='siparis'>

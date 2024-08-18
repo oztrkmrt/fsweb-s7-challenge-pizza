@@ -6,9 +6,7 @@ export default function SiparisToplam({ numberOfIngs, numberOfOrder, buttonDisab
 
     let history = useHistory();
 
-    const handleClick = () => {
-        history.push("/Success")
-    }
+
 
     const formData = {
         Boyut: { chooseBoyut },

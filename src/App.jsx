@@ -15,6 +15,7 @@ function App() {
   const [numberOfOrder, setNumberOfOrder] = useState(1)
   const [chooseBoyut, setChooseBoyut] = useState("")
   const [chooseDough, setChooseDough] = useState("")
+  const [note, setNote] = useState("")
 
 
   const buttonDisabled = (numberOfIngs < 4 || !chooseBoyut || !chooseDough)
@@ -49,12 +50,19 @@ function App() {
 
   }
 
+  const handleNoteChange = (event) => {
+    setNote(event.target.value);
+  };
+
   return (
     <>
       <Switch>
         <Route exact path="/"><Home /></Route>
-        <Route path="/OrderPizza"><OrderPizza setChooseDough={setChooseDough} setChooseBoyut={setChooseBoyut} handleChangeIng={handleChangeIng} ingredients={ingredients} numberOfIngs={numberOfIngs} handleChangeIncrease={handleChangeIncrease} handleChangeDecrease={handleChangeDecrease} numberOfOrder={numberOfOrder} buttonDisabled={buttonDisabled} chooseBoyut={chooseBoyut} chooseDough={chooseDough} /></Route>
-        <Route path="/Success"><Success numberOfOrder={numberOfOrder} numberOfIngs={numberOfIngs} chooseDough={chooseDough} chooseBoyut={chooseBoyut} ingredients={ingredients} /></Route>
+        <Route path="/OrderPizza"><OrderPizza setChooseDough={setChooseDough} setChooseBoyut={setChooseBoyut}
+          handleChangeIng={handleChangeIng} ingredients={ingredients} numberOfIngs={numberOfIngs} handleChangeIncrease={handleChangeIncrease}
+          handleChangeDecrease={handleChangeDecrease} numberOfOrder={numberOfOrder} buttonDisabled={buttonDisabled} chooseBoyut={chooseBoyut} chooseDough={chooseDough}
+          note={note} handleNoteChange={handleNoteChange} /></Route>
+        <Route path="/Success"><Success note={note} numberOfOrder={numberOfOrder} numberOfIngs={numberOfIngs} chooseDough={chooseDough} chooseBoyut={chooseBoyut} ingredients={ingredients} /></Route>
       </Switch>
     </>
   )

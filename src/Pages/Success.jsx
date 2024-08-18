@@ -7,7 +7,9 @@ export default function Success({
   numberOfIngs,
   chooseDough,
   chooseBoyut,
-  ingredients }) {
+  ingredients,
+  note
+}) {
 
   return (
     <div className='success'>
@@ -28,6 +30,7 @@ export default function Success({
           <span>Boyut: {chooseBoyut}</span>
           <span>Hamur: {chooseDough}</span>
           <span>Ek Malzemeler: {ingredients.join(', ')}</span>
+          <span>Sipariş Notu: {note} </span>
         </div>
         <div style={{
           display: "flex",
