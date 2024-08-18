@@ -8,12 +8,12 @@ import icon6 from "../../Assets/mile2-aseets/icons/6.svg"
 export default function IconsNavButton() {
 
     const navButtons = [
-        { src: "../../Assets/mile2-aseets/icons/1.svg", text: "Ramen" },
-        { src: "../../Assets/mile2-aseets/icons/2.svg", text: "Pizza" },
-        { src: "../../Assets/mile2-aseets/icons/3.svg", text: "Burger" },
-        { src: "../../Assets/mile2-aseets/icons/4.svg", text: "French fries" },
-        { src: "../../Assets/mile2-aseets/icons/5.svg", text: "Fast food" },
-        { src: "../../Assets/mile2-aseets/icons/6.svg", text: "Soft drinks" },
+        { src: icon1, text: "Ramen" },
+        { src: icon2, text: "Pizza" },
+        { src: icon3, text: "Burger" },
+        { src: icon4, text: "French fries" },
+        { src: icon5, text: "Fast food" },
+        { src: icon6, text: "Soft drinks" },
     ]
 
     return (
